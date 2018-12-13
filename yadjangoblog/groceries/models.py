@@ -13,7 +13,7 @@ class CompanyCategory(models.Model):
     class Meta:
         verbose_name = "公司分类"
         verbose_name_plural = "公司分类"
-        app_label = '网站合集'
+        app_label = 'groceries'
 
 class Company(models.Model):
     name = models.CharField(verbose_name="公司名", db_index=True, unique=True, null=False, blank=False, max_length=100)
@@ -27,4 +27,4 @@ class Company(models.Model):
     class Meta:
         verbose_name = "公司"
         verbose_name_plural = "公司"
-        app_label = '网站合集'
+        app_label = 'groceries'
