@@ -64,6 +64,7 @@ class Account(AbstractUser):
         },
     )
     telephone = models.CharField(max_length=20, blank=True, db_index=True, null=True, unique=True, verbose_name="手机")
+    email = models.CharField(max_length=20, blank=True, db_index=True, null=True, unique=True, verbose_name="邮箱")
     avatar_url = models.URLField(max_length=255, blank=True, verbose_name="头像链接")
 
     register_source = models.CharField(max_length=10, default=0, verbose_name="注册来源")
@@ -71,7 +72,7 @@ class Account(AbstractUser):
 
     objects = AccountManager()
 
-    REQUIRED_FIELDS = ['telephone']
+    REQUIRED_FIELDS = ['telephone', 'email']
     USERNAME_FIELD = 'username'
 
     def __str__(self):
