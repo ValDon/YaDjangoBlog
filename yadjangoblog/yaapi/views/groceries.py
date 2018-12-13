@@ -1,5 +1,5 @@
 from rest_framework import generics, permissions, serializers
-# from rest_framework.response import Response
+from rest_framework.response import Response
 # from rest_framework.filters import OrderingFilter
 
 from groceries.models import CompanyCategory, Company
