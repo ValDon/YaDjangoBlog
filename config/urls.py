@@ -7,6 +7,8 @@ from django.views import defaults as default_views
 from django.views.generic import RedirectView
 from django.views.generic import TemplateView
 
+from .urlsforvue import vueUrlPatterns
+
 favicon_view = RedirectView.as_view(url='/static/favicon.ico', permanent=True)
 
 urlpatterns = [
@@ -17,6 +19,8 @@ urlpatterns = [
                   re_path(settings.ADMIN_URL, admin.site.urls),
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) \
               + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+urlpatterns += vueUrlPatterns
 
 if settings.DEBUG:
     import debug_toolbar
