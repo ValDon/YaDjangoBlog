@@ -185,7 +185,8 @@ STATICFILES_FINDERS = (
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#media-root
 
-MEDIA_ROOT = os.getenv('MEDIA_ROOT', os.path.join(ASSETS_DIR, 'media'))
+# MEDIA_ROOT = os.getenv('MEDIA_ROOT', os.path.join(ASSETS_DIR, 'media'))
+MEDIA_ROOT = os.getenv('MEDIA_ROOT', os.path.join(APPS_DIR, 'frontend', 'static', 'media'))
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#media-url
 MEDIA_URL = '/media/'
 
