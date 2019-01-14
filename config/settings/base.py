@@ -61,6 +61,7 @@ LOCAL_APPS = (
     'yablog',
     'yataskapp',
     'groceries',
+    'inteliService'
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
