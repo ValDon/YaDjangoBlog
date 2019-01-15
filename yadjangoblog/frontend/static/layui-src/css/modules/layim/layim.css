@@ -132,7 +132,7 @@ body .layui-layim-chat .layui-layer-content{background: none;}
 .layim-chat-group .layim-chat-other .layim-chat-username{cursor: pointer;}
 .layim-chat-group .layim-chat-other .layim-chat-username em{padding: 0 10px; color: #999;}
 
-.layim-chat-main{height: 262px; padding: 15px 15px 5px 15px; overflow-x: hidden; overflow-y: auto;}
+.layim-chat-main{height: 340px; padding: 15px 15px 5px 15px; overflow-x: hidden; overflow-y: auto;}
 .layim-chat-main ul li{position: relative; font-size: 0; margin-bottom: 10px; padding-left: 60px; min-height: 68px;}
 .layim-chat-user,
 .layim-chat-text{display: inline-block; *display:inline; *zoom:1; vertical-align:top; font-size: 14px;}

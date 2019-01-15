@@ -178,4 +178,9 @@ html #layuicss-layer{display: none; position: absolute; width: 1989px;}
   .layui-layer-iframe{overflow-y: auto; -webkit-overflow-scrolling: touch;}
 }
 
+.layui-layim-chat {
+  position: inherit;
+  box-shadow:none;
+}
+
 

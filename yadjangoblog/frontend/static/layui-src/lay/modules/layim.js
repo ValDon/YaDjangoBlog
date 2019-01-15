@@ -629,22 +629,24 @@ layui.define(['layer', 'laytpl', 'upload'], function(exports){
     
     var index = chatIndex = layer.open({
       type: 1
-      ,area: '600px'
+      ,area: 'auto'
       ,skin: 'layui-box layui-layim-chat'
       ,id: 'layui-layim-chat'
       ,title: '&#8203;'
       ,shade: false
-      ,maxmin: true
+      // ,maxmin: true
       ,offset: data.offset || 'auto'
-      ,anim: data.anim || 0
+      // ,anim: data.anim || 0
+      ,anim: -1
       ,closeBtn: cache.base.brief ? false : 1
       ,content: laytpl('<ul class="layui-unselect layim-chat-list">'+ elemChatList +'</ul><div class="layim-chat-box">' + elemChatTpl + '</div>').render(render)
       ,success: function(layero){
         layimChat = layero;
         
         layero.css({
-          'min-width': '500px'
-          ,'min-height': '420px'
+          // 'min-width': '500px'
+          // ,'min-height': '420px'
+          'width': 'auto'
         });
         
         syncGray(data);
@@ -684,23 +686,24 @@ layui.define(['layer', 'laytpl', 'upload'], function(exports){
           });
         });
       }
-      ,full: function(layero){
-        layer.style(index, {
-          width: '100%'
-          ,height: '100%'
-        }, true);
-        resizeChat();
-      }
-      ,resizing: resizeChat
-      ,restore: resizeChat
-      ,min: function(){
-        setChatMin();
-        return false;
-      }
-      ,end: function(){
-        layer.closeAll('tips');
-        layimChat = null;
-      }
+      // ,full: function(layero){
+      //   layer.style(index, {
+      //     width: '100%'
+      //     ,height: '100%'
+      //   }, true);
+      //   resizeChat();
+      // }
+      // ,resizing: resizeChat
+      // ,restore: resizeChat
+      ,resize: false
+      // ,min: function(){
+      //   setChatMin();
+      //   return false;
+      // }
+      // ,end: function(){
+      //   layer.closeAll('tips');
+      //   layimChat = null;
+      // }
     });
     return index;
   };

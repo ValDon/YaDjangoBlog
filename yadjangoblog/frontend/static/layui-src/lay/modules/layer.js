@@ -537,7 +537,7 @@ Class.pt.move = function(){
   ,dict = {};
   
   if(config.move){
-    moveElem.css('cursor', 'move');
+    // moveElem.css('cursor', 'move');
   }
 
   moveElem.on('mousedown', function(e){
