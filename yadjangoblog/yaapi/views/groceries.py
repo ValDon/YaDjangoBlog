@@ -24,3 +24,15 @@ class WebResourceyLogoAPIView(BaseAPIView):
         serializer = CompanyCatetorySerializer(bc, many=True)
         res = {"results": serializer.data}
         return Response(res)
+
+class BaikeKgAPIView(BaseAPIView):
+    def get(self, request, name):
+
+        from pymongo import MongoClient
+        client = MongoClient('mongodb', 27017)        
+        db = client.KG
+        collection = db.baike
+        data = collection.find_one({'name': name})
+
+        res = {"results": data}
+        return Response(res)

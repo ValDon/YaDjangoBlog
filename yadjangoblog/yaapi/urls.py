@@ -11,12 +11,13 @@ from yaapi.views.blog import BlogPostAPIView, BlogPostListAPIView, BlogCategoryA
     BlogPostArchiveAPIView
 from yaapi.views.search import BlogSearchAPIView
 
-from yaapi.views.groceries import WebResourceyLogoAPIView
+from yaapi.views.groceries import WebResourceyLogoAPIView, BaikeKgAPIView
 
 router = routers.DefaultRouter()
 
 urlpatterns = [
     path(r'v1/websites', WebResourceyLogoAPIView.as_view()),
+    path(r'v1/baike-kg/<str:name>', BaikeKgAPIView.as_view()),
     path(r'v1/auth/api-auth', include('rest_framework.urls', namespace='rest_framework')),
     path(r'v1/auth/api-token-auth', obtain_jwt_token),
     path(r'v1/auth/api-token-refresh', refresh_jwt_token),
