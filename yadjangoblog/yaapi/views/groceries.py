@@ -33,6 +33,7 @@ class BaikeKgAPIView(BaseAPIView):
         db = client.KG
         collection = db.baike
         data = collection.find_one({'name': name})
+        data = data.pop('_id')
 
         res = {"results": data}
         return Response(res)
