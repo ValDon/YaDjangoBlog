@@ -5,6 +5,12 @@ from rest_framework.response import Response
 from groceries.models import CompanyCategory, Company
 from .base import BaseAPIView
 
+
+# 普通view
+from django.views.generic.base import View
+from django.http import HttpResponse,JsonResponse
+
+
 class CompanySerializer(serializers.ModelSerializer):
     class Meta:
         model = Company
@@ -25,7 +31,7 @@ class WebResourceyLogoAPIView(BaseAPIView):
         res = {"results": serializer.data}
         return Response(res)
 
-class BaikeKgAPIView(BaseAPIView):
+class BaikeKgAPIView(View):
     def get(self, request, name):
 
         from pymongo import MongoClient
@@ -36,4 +42,4 @@ class BaikeKgAPIView(BaseAPIView):
         data = data.pop('_id')
 
         res = {"results": data}
-        return Response(res)
+        return HttpResponse(res)
