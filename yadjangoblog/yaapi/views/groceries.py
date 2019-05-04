@@ -31,15 +31,21 @@ class WebResourceyLogoAPIView(BaseAPIView):
         res = {"results": serializer.data}
         return Response(res)
 
-class BaikeKgAPIView(View):
+class BaikeKgAPIView(BaseAPIView):
     def get(self, request, name):
 
         from pymongo import MongoClient
+        from bson import json_util
+        import json
+
         client = MongoClient('mongodb', 27017)        
         db = client.KG
         collection = db.baike
-        data = collection.find_one({'name': name})
-        data = data.pop('_id')
+        data = collection.find({'name': name})
+        data = json.loads(json_util.dumps(data))
+
+        # if data: 
+        #     # data.pop('_id')
 
         res = {"results": data}
-        return HttpResponse(res)
+        return Response(res)
